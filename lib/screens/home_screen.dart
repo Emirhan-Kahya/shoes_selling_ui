@@ -2,22 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:shoes_selling_ui/color.dart';
 import 'package:shoes_selling_ui/widgets/filled_button.dart';
 import 'package:shoes_selling_ui/widgets/mText.dart';
+import 'package:shoes_selling_ui/widgets/shoes_card.dart';
 import 'package:shoes_selling_ui/widgets/text_widget.dart';
 
 import '../models/brand_models.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
     List<Brands> _data = [
-      Brands(logo: "a", name: "Nike", isFilled: true),
-      Brands(logo: "a", name: "Adidas", isFilled: false),
-      Brands(logo: "a", name: "New Balance", isFilled: false),
-      Brands(logo: "a", name: "Puma", isFilled: false),
+      Brands(logo: "assets/images/nike.png", name: "Nike", isFilled: true),
+      Brands(logo: "assets/images/nike.png", name: "Adidas", isFilled: false),
+      Brands(
+          logo: "assets/images/nike.png", name: "New Balance", isFilled: false),
+      Brands(logo: "assets/images/nike.png", name: "Puma", isFilled: false),
     ];
 
     return Scaffold(
@@ -25,7 +32,7 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         width: double.maxFinite,
         height: double.maxFinite,
-        margin: const EdgeInsets.only(top: 60, left: 30),
+        margin: const EdgeInsets.only(top: 65, left: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -68,13 +75,12 @@ class HomeScreen extends StatelessWidget {
                         prefixIcon: Icon(Icons.search,
                             color: AppColor.theme1.withOpacity(0.6), size: 28),
                         hintText: "Search",
+                        hintMaxLines: 1,
                         hintStyle: TextStyle(
                             fontSize: 20,
                             color: AppColor.theme1.withOpacity(0.6)),
                         fillColor: AppColor.theme4,
                         filled: true,
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50),
                             borderSide: BorderSide(
@@ -119,18 +125,46 @@ class HomeScreen extends StatelessWidget {
             Container(
               height: 70,
               child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: _data.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: const EdgeInsets.only(right: 15),
-                        child: FilledButton(
-                      press: () {},
+                scrollDirection: Axis.horizontal,
+                itemCount: _data.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin: const EdgeInsets.only(right: 15),
+                    child: FilledButton(
+                      press: () {
+                        setState(() {
+                          _data[index].isFilled = true;
+                        });
+                      },
                       text: _data[index].name,
+                      images: _data[index].logo,
                       isFilled: _data[index].isFilled,
-                    ));
-                  }),
-            )
+                    ),
+                  );
+                },
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              width: size.width,
+              height: 400,
+              color: AppColor.theme4,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (context, int){
+                return Container(
+                  margin: const EdgeInsets.only(right: 20),
+                  child: ShoesCard(
+                    name: "Nike Air Max",
+                    image: "assets/images/shoes1.png",
+                    price: "250",
+                    colorCount: "5",
+                    type: 'Men',
+                  ),
+                );
+              },),
+            ),
           ],
         ),
       ),
