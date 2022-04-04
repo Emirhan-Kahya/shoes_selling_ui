@@ -59,7 +59,7 @@ class WelcomeScreen extends StatelessWidget {
                     children: [
                       Column(
                         children: [
-                          mText(
+                          mLargeText(
                             text: "find your  ",
                             textSize: 30,
                             color: AppColor.theme3,
@@ -74,7 +74,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       Column(
                         children: [
-                          mText(
+                          mLargeText(
                             text: "best",
                             textSize: 30,
                             color: AppColor.theme3,
@@ -90,7 +90,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  mText(
+                  mLargeText(
                     text: "collections",
                     textSize: 30,
                     color: AppColor.theme3,

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class mLargeText extends StatelessWidget {
+class mText extends StatelessWidget {
   final String text;
   final double textSize;
   final Color color;
-  const mLargeText(
+  const mText(
       {Key? key,
-      required this.text,
-      this.textSize = 20,
-      this.color = Colors.black,
+        required this.text,
+        this.textSize = 14,
+        this.color = Colors.black,
       })
       : super(key: key);
 
@@ -16,12 +16,11 @@ class mLargeText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      textAlign: TextAlign.center,
+      textAlign: TextAlign.start,
       style: TextStyle(
-        letterSpacing: 2,
+        letterSpacing: 1,
         color: color,
         fontSize: textSize,
-        fontWeight: FontWeight.bold,
       ),
     );
   }

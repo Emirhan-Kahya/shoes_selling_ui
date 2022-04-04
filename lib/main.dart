@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_selling_ui/screens/home_screen.dart';
 import 'package:shoes_selling_ui/screens/welcome_screen.dart';
 
 import 'package:get/get.dart';
@@ -19,7 +20,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      home: HomeScreen(),
     );
   }
 }
