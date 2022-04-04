@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         width: double.maxFinite,
         height: double.maxFinite,
-        margin: const EdgeInsets.symmetric(vertical: 50, horizontal: 30),
+        margin: const EdgeInsets.symmetric(vertical: 60, horizontal: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -37,9 +37,10 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  width: size.width / 1.5,
+                  width: size.width / 1.6,
                   decoration: BoxDecoration(
                     boxShadow: [
                         BoxShadow(
@@ -54,11 +55,11 @@ class HomeScreen extends StatelessWidget {
                       prefixIcon: Icon(Icons.search, color: AppColor.theme1.withOpacity(0.6), size: 28),
                       hintText: "Search",
                       hintStyle: TextStyle(
-                        fontSize: 22,color: AppColor.theme1.withOpacity(0.6)
+                        fontSize: 20,color: AppColor.theme1.withOpacity(0.6)
                       ),
                       fillColor: AppColor.theme4,
                       filled: true,
-                      contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+                      contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
                         borderSide: BorderSide(
@@ -80,6 +81,17 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                Container(
+                   width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: AppColor.theme1
+                  ),
+                  child: Center(
+                    child: Icon(Icons.sort_rounded, color: AppColor.theme4, size: 28),
+                  ),
+                ),
               ],
             ),
           ],
