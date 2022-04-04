@@ -47,8 +47,8 @@ class WelcomeScreen extends StatelessWidget {
             ),
             Positioned(
               bottom: size.width / 2.2,
-              left: 50,
-              right: 50,
+              left: 5,
+              right: 5,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -61,7 +61,7 @@ class WelcomeScreen extends StatelessWidget {
                         children: [
                           mText(
                             text: "find your  ",
-                            textSize: 38,
+                            textSize: 30,
                             color: AppColor.theme3,
                           ),
                           Container(
@@ -76,11 +76,11 @@ class WelcomeScreen extends StatelessWidget {
                         children: [
                           mText(
                             text: "best",
-                            textSize: 38,
+                            textSize: 30,
                             color: AppColor.theme3,
                           ),
                           Container(
-                            width: 75,
+                            width: 70,
                             height: 5,
                             decoration: BoxDecoration(
                                 color: AppColor.theme2,
@@ -92,7 +92,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   mText(
                     text: "collections",
-                    textSize: 38,
+                    textSize: 30,
                     color: AppColor.theme3,
                   ),
                 ],
