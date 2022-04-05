@@ -30,7 +30,7 @@ class _buildBottomNavState extends State<buildBottomNav> {
             BoxShadow(
                 color: AppColor.theme5.withOpacity(0.3),
                 blurRadius: 20,
-                spreadRadius: 1jk,
+                spreadRadius: 1,
             ),
           ],
         ),
