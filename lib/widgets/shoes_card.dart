@@ -20,7 +20,6 @@ class ShoesCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 20),
       width: 220,
-      height: 400,
       decoration: BoxDecoration(
         color: AppColor.theme4,
         borderRadius: BorderRadius.circular(20),

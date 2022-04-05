@@ -3,7 +3,7 @@ import 'package:shoes_selling_ui/color.dart';
 
 class FilledButton extends StatelessWidget {
   final bool isFilled;
-  final VoidCallback press;
+  final Function() press;
   final String text, images;
   const FilledButton(
       {Key? key,

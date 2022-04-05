@@ -16,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _selected = 0;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -23,8 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Brands> _data = [
       Brands(logo: "assets/images/nike.png", name: "Nike", isFilled: true),
       Brands(logo: "assets/images/nike.png", name: "Adidas", isFilled: false),
-      Brands(
-          logo: "assets/images/nike.png", name: "New Balance", isFilled: false),
+      Brands(logo: "assets/images/nike.png", name: "New Balance", isFilled: false),
       Brands(logo: "assets/images/nike.png", name: "Puma", isFilled: false),
     ];
 
@@ -135,14 +135,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     return Container(
                       margin: const EdgeInsets.only(right: 15),
                       child: FilledButton(
-                        press: () {
-                          setState(() {
-                            _data[index].isFilled = true;
-                          });
-                        },
                         text: _data[index].name,
                         images: _data[index].logo,
                         isFilled: _data[index].isFilled,
+                        press: (){
+                          setState(() {
+                            isFilled: _data[index].isFilled == true;
+                          });
+                        },
                       ),
                     );
                   },
@@ -151,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 20),
               Container(
                 width: size.width,
-                height: 400,
+                height: 350,
                 color: AppColor.theme4,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,

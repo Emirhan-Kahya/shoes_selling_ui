@@ -18,7 +18,6 @@ class _buildBottomNavState extends State<buildBottomNav> {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      color: AppColor.theme4,
       child: Container(
         decoration: BoxDecoration(
           color: AppColor.theme4,
@@ -35,7 +34,7 @@ class _buildBottomNavState extends State<buildBottomNav> {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20),
+          padding: const EdgeInsets.only(bottom: 30, top: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
